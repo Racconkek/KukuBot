@@ -1,3 +1,4 @@
+import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -8,9 +9,10 @@ public class TelegramBot extends TelegramLongPollingBot {
     private String Name;
     private String Token;
 
-    public TelegramBot(){
-        Name = "KukuRaccoonBot";
-        Token = "764785281:AAGV9G4iq3s62RDuwZ5S1g1ktorXnPNK0D4";
+    protected TelegramBot(String botToken, String botUsername, DefaultBotOptions botOptions){
+        super(botOptions);
+        Name = botUsername;
+        Token = botToken;
     }
 
     @Override
